@@ -10,12 +10,14 @@ export default function HomePage() {
       <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur shadow-md">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <h1 className="text-xl sm:text-2xl font-bold text-rose-600">Little Steps Academy</h1>
-          <div className="space-x-4 text-sm font-medium text-gray-700">
-            <a href="#about" className="hover:text-rose-500 transition">About</a>
-            <a href="#programs" className="hover:text-rose-500 transition">Programs</a>
-            <a href="#enrollment" className="hover:text-rose-500 transition">Enrollment</a>
-            <a href="#contact" className="hover:text-rose-500 transition">Contact</a>
-          </div>
+          <div className="flex space-x-6 text-lg font-semibold text-gray-800">
+          <a href="#about" className="hover:text-rose-500 transition">About</a>
+          <a href="#programs" className="hover:text-rose-500 transition">Programs</a>
+          <a href="#calendar" className="hover:text-rose-500 transition">Calendar</a>
+          <a href="#enrollment" className="hover:text-rose-500 transition">Enrollment</a>
+          <a href="#contact" className="hover:text-rose-500 transition">Contact</a>
+        </div>
+
           {/* Add Enroll Now button here */}
     <a
       href="https://form.jotform.com/252055728049157"
@@ -77,6 +79,41 @@ export default function HomePage() {
             height={400}
             className="rounded-xl shadow-lg object-cover ring-4 ring-white"
           /></center>
+        </div>
+      </section>
+
+      {/* Calendar of Events Section */}
+      <section id="calendar" className="py-20 px-6 bg-gradient-to-tr from-indigo-50 via-blue-50 to-pink-50 max-w-5xl mx-auto rounded-2xl shadow-inner mt-12">
+        <h2 className="text-4xl font-bold text-rose-600 mb-8 text-center">Annual Calendar of Events</h2>
+
+        <div className="space-y-8 max-w-3xl mx-auto">
+          {/* Example month */}
+          <div>
+            <h3 className="text-2xl font-semibold text-rose-700 mb-2">September 2025</h3>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>Sept 7 – Labor Day (Center Closed)</li>
+              <li>Sept 14 – Fall Welcome Picnic</li>
+              <li>Sept 25 – Parent-Teacher Conferences</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-semibold text-rose-700 mb-2">October 2025</h3>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>Oct 15 – Field Trip to Pumpkin Patch</li>
+              <li>Oct 31 – Halloween Costume Party</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-semibold text-rose-700 mb-2">November 2025</h3>
+            <ul className="list-disc list-inside text-gray-700">
+              <li>Nov 26 – Thanksgiving Holiday (Center Closed)</li>
+              <li>Nov 28 – Family Story Time</li>
+            </ul>
+          </div>
+
+          {/* Add more months as needed */}
         </div>
       </section>
 
