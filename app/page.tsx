@@ -1,31 +1,71 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
 export default function HomePage() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <main className="bg-white text-gray-800 scroll-smooth font-sans">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur shadow-md">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
           <h1 className="text-xl sm:text-2xl font-bold text-rose-600">Little Steps Academy</h1>
-          <div className="flex space-x-6 text-lg font-semibold text-gray-800">
-          <a href="#about" className="hover:text-rose-500 transition">About</a>
-          <a href="#programs" className="hover:text-rose-500 transition">Programs</a>
-          <a href="#calendar" className="hover:text-rose-500 transition">Calendar</a>
-          <a href="#enrollment" className="hover:text-rose-500 transition">Enrollment</a>
-          <a href="#contact" className="hover:text-rose-500 transition">Contact</a>
+
+          {/* Hamburger Menu */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="sm:hidden text-rose-600 focus:outline-none"
+          >
+            ☰
+          </button>
+
+          {/* Desktop Menu */}
+          <div className="hidden sm:flex space-x-4 md:space-x-6 text-lg font-semibold text-gray-800 items-center">
+            <a href="#about" className="hover:text-rose-500 transition">About</a>
+            <a href="#programs" className="hover:text-rose-500 transition">Programs</a>
+            <a href="#calendar" className="hover:text-rose-500 transition">Calendar</a>
+            <a href="#enrollment" className="hover:text-rose-500 transition">Enrollment</a>
+            <a href="#contact" className="hover:text-rose-500 transition">Contact</a>
+            <a
+              href="https://form.jotform.com/252055728049157"
+              className="bg-rose-600 text-white px-4 py-2 rounded-full shadow hover:bg-rose-700 transition"
+            >
+              Enroll Now
+            </a>
+            <a
+              href="#contact"
+              className="bg-rose-600 text-white px-4 py-2 rounded-full shadow hover:bg-rose-700 transition"
+            >
+              Schedule a Tour
+            </a>
+          </div>
         </div>
 
-          {/* Add Enroll Now button here */}
-    <a
-      href="https://form.jotform.com/252055728049157"
-      className="ml-6 inline-block bg-rose-600 text-white px-5 py-2 rounded-full shadow-md hover:bg-rose-700 transition"
-    >
-      Enroll Now
-    </a>
-        </div>
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <div className="sm:hidden px-4 pb-4 space-y-2 bg-white text-gray-800 font-medium">
+            <a href="#about" className="block">About</a>
+            <a href="#programs" className="block">Programs</a>
+            <a href="#calendar" className="block">Calendar</a>
+            <a href="#enrollment" className="block">Enrollment</a>
+            <a href="#contact" className="block">Contact</a>
+            <a
+              href="https://form.jotform.com/252055728049157"
+              className="block bg-rose-600 text-white text-center px-4 py-2 rounded-full shadow hover:bg-rose-700 transition"
+            >
+              Enroll Now
+            </a>
+            <a
+              href="#contact"
+              className="block bg-rose-600 text-white text-center px-4 py-2 rounded-full shadow hover:bg-rose-700 transition"
+            >
+              Schedule a Tour
+            </a>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -136,8 +176,8 @@ export default function HomePage() {
       {/* Contact Section */}
       <section id="contact" className="py-20 px-6 bg-white max-w-5xl mx-auto">
         <h2 className="text-4xl font-bold text-rose-600 mb-4">Contact Us</h2>
-        <p className="text-gray-700 text-lg space-y-1">
-          <span className="block">📍 Oak Park, MI</span>
+        <p className="text-gray-700 text-lg space-y-1"> Call or email us to get more information, or to schedule a tour.<br />
+          <span className="block">📍 Detroit, MI</span>
           <span className="block">📧 hello@yourdaycare.com</span>
           <span className="block">📞 (313) 555-1234</span>
         </p>
